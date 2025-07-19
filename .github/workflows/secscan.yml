@@ -1,10 +1,10 @@
 name: Secure Code Scan 🔐
 
 on:
-  pull_request:
+  push:
     branches:
       - main
-  push:
+  pull_request:
     branches:
       - main
 
@@ -28,10 +28,9 @@ jobs:
 
       - name: Run AI Code Scanner 🤖
         run: |
-          echo "Running static analysis..."
-          python scan.py > report.json || true
+          python scan.py || true
 
-      - name: Upload Report 📤
+      - name: Upload AI Security Report 📤
         uses: actions/upload-artifact@v3
         with:
           name: ai-sec-report
