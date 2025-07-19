@@ -3,34 +3,33 @@ name: Secure Code Scan 🔐
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   ai-code-scan:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code 📦
+      - name: 📦 Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Python 🐍
+      - name: 🐍 Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
-      - name: Install Dependencies 📦
+      - name: 🔄 Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install flask transformers
 
-      - name: Run AI Code Scanner 🤖
+      - name: 🤖 Run AI Security Scan
         run: |
-          python scan.py || true
+          python scan.py
 
-      - name: Upload AI Security Report 📤
+      - name: 📤 Upload report.json
         uses: actions/upload-artifact@v3
         with:
           name: ai-sec-report
