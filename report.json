@@ -1,0 +1,16 @@
+{
+  "issues": [
+    {
+      "line": 1,
+      "type": "Hardcoded API Key",
+      "severity": "High",
+      "suggestion": "Use env variable"
+    },
+    {
+      "line": 2,
+      "type": "Hardcoded Password",
+      "severity": "High",
+      "suggestion": "Use vault secret manager"
+    }
+  ]
+}
