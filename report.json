@@ -1,16 +1,22 @@
 {
-  "issues": [
-    {
-      "line": 1,
-      "type": "Hardcoded API Key",
-      "severity": "High",
-      "suggestion": "Use env variable"
-    },
-    {
-      "line": 2,
-      "type": "Hardcoded Password",
-      "severity": "High",
-      "suggestion": "Use vault secret manager"
-    }
-  ]
+    "issues": [
+        {
+            "type": "Hardcoded API Key",
+            "line": 1,
+            "severity": "High",
+            "suggestion": "Use environment variables"
+        },
+        {
+            "type": "Hardcoded Password",
+            "line": 2,
+            "severity": "Critical",
+            "suggestion": "Use secure credential storage"
+        },
+        {
+            "type": "SQL Injection",
+            "line": 5,
+            "severity": "High",
+            "suggestion": "Use parameterized queries"
+        }
+    ]
 }
